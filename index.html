@@ -13,6 +13,28 @@
 <body>
     <div class="particles-container" id="particles-js"></div>
     
+    <!-- Login Popup Modal -->
+    <div class="login-overlay" id="loginOverlay">
+        <div class="login-modal">
+            <div class="login-header">
+                <h2><i class="fas fa-infinity"></i> Infinity Leap</h2>
+                <p>Giriş Yapın</p>
+            </div>
+            <div class="login-body">
+                <div class="input-group">
+                    <i class="fas fa-user"></i>
+                    <input type="text" id="username" placeholder="Kullanıcı Adı">
+                </div>
+                <div class="input-group">
+                    <i class="fas fa-lock"></i>
+                    <input type="password" id="password" placeholder="Şifre">
+                </div>
+                <p class="error-message" id="errorMessage"></p>
+                <button class="login-btn" id="loginButton">Giriş Yap</button>
+            </div>
+        </div>
+    </div>
+    
     <nav class="navbar">
         <div class="nav-content">
             <div class="logo">
@@ -23,7 +45,7 @@
                 <li><a href="#home">Ana Sayfa</a></li>
                 <li><a href="#about">Hakkında</a></li>
                 <li><a href="#usage">Kullanım</a></li>
-                <li><a href="#features">Gelecekte Yapılacaklar</a></li>
+                <li><a href="#features">Finale Kadar Yapılacaklar</a></li>
             </ul>
             <div class="menu-toggle">
                 <i class="fas fa-bars"></i>
@@ -153,7 +175,7 @@
         
         <section id="features" class="content features-section">
             <div class="section-header">
-                <h2 class="section-title">Gelecekte Yapılacaklar</h2>
+                <h2 class="section-title">Finale Kadar Yapılacaklar</h2>
                 <div class="section-line"></div>
             </div>
             
@@ -162,29 +184,29 @@
                     <div class="feature-icon">
                         <i class="fas fa-paint-brush"></i>
                     </div>
-                    <h4>Özelleştirilebilir Toplar</h4>
-                    <p>Farklı renk ve stillerde toplar seçerek oyununuzu kişiselleştirin.</p>
+                    <h4>Skor Sayacının Eklenmesi</h4>
+                    <p>Kullanıcının anlık olarak takip edebşleceği bir skor sayacı eklenecek.</p>
                 </div>
                 <div class="feature-item">
                     <div class="feature-icon">
                         <i class="fas fa-music"></i>
                     </div>
-                    <h4>Etkileyici Ses Efektleri</h4>
-                    <p>Gerçekçi ses efektleri ile oyun deneyiminizi zenginleştirin.</p>
+                    <h4>Motive Edici Sözlerin Eklenmesi</h4>
+                    <p>Kullanıcıyı motive edecek sözlerin skor bazlı ekrana yazdırılacak.</p>
                 </div>
                 <div class="feature-item">
                     <div class="feature-icon">
                         <i class="fas fa-chart-line"></i>
                     </div>
-                    <h4>İlerleme Takibi</h4>
-                    <p>Oyun istatistiklerinizi görüntüleyin ve gelişiminizi takip edin.</p>
+                    <h4>Topun Uzaklaşma Sınırının Belirlenmesi</h4>
+                    <p>Akıcı bir oyun deneyimi için topun ekran sınırları içinde kalması sağlanacak.</p>
                 </div>
                 <div class="feature-item">
                     <div class="feature-icon">
                         <i class="fas fa-users"></i>
                     </div>
-                    <h4>Çok Oyunculu Mod</h4>
-                    <p>Arkadaşlarınızla rekabet edin ve en yüksek skoru kimin yapacağını görün.</p>
+                    <h4>Yerçekimi Etkisinin Arttırımsal Etkisinin Eklenmesi</h4>
+                    <p>Topa her tıklandığında yerçekimi etkisi 1.5 katına çıkarılarak hem oyun zorluğu kademeli olarak artırılmış olunur hem de oyun içi sürükleyicilik artar.</p>
                 </div>
             </div>
         </section>
@@ -201,7 +223,7 @@
                         <li><a href="#home">Ana Sayfa</a></li>
                         <li><a href="#about">Hakkında</a></li>
                         <li><a href="#usage">Kullanım</a></li>
-                        <li><a href="#features">Gelecekte Yapılacaklar</a></li>
+                        <li><a href="#features">Finale Kadar Yapılacaklar</a></li>
                     </ul>
                 </div>
             </div>
