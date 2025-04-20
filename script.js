@@ -1,3 +1,87 @@
+// Login Functionality
+document.addEventListener('DOMContentLoaded', function() {
+    const loginOverlay = document.getElementById('loginOverlay');
+    const loginButton = document.getElementById('loginButton');
+    const usernameInput = document.getElementById('username');
+    const passwordInput = document.getElementById('password');
+    const errorMessage = document.getElementById('errorMessage');
+    
+    // Focus on the username field when the page loads
+    usernameInput.focus();
+    
+    // Login button click event
+    loginButton.addEventListener('click', validateLogin);
+    
+    // Also allow Enter key to submit
+    passwordInput.addEventListener('keydown', function(e) {
+        if (e.key === 'Enter') {
+            validateLogin();
+        }
+    });
+    
+    usernameInput.addEventListener('keydown', function(e) {
+        if (e.key === 'Enter') {
+            passwordInput.focus();
+        }
+    });
+    
+    // Login validation function
+    function validateLogin() {
+        const username = usernameInput.value.trim();
+        const password = passwordInput.value.trim();
+        
+        // Check if fields are empty
+        if (username === '' || password === '') {
+            showError('Lütfen kullanıcı adı ve şifre giriniz');
+            return;
+        }
+        
+        // Check if credentials are correct
+        if (username === 'admin' && password === '3496') {
+            // Success: Hide the login overlay with animation
+            loginOverlay.classList.add('login-hidden');
+            
+            // Clear any error messages
+            errorMessage.textContent = '';
+            
+            // Optional: Store login state in session storage to prevent requiring login again on page refresh
+            sessionStorage.setItem('loggedIn', 'true');
+        } else {
+            // Failed login
+            showError('Kullanıcı adı veya şifreniz yanlış, kontrol ediniz');
+            passwordInput.value = ''; // Clear password field
+            passwordInput.focus();
+        }
+    }
+    
+    // Show error message with animation
+    function showError(message) {
+        errorMessage.textContent = message;
+        errorMessage.style.animation = 'none';
+        
+        // Trigger reflow to restart animation
+        void errorMessage.offsetWidth;
+        
+        errorMessage.style.animation = 'shake 0.5s ease-in-out';
+    }
+    
+    // Check if user was already logged in
+    if (sessionStorage.getItem('loggedIn') === 'true') {
+        loginOverlay.classList.add('login-hidden');
+    }
+    
+    // Add shake animation for error message
+    const styleSheet = document.createElement('style');
+    styleSheet.textContent = `
+        @keyframes shake {
+            0%, 100% { transform: translateX(0); }
+            10%, 30%, 50%, 70%, 90% { transform: translateX(-5px); }
+            20%, 40%, 60%, 80% { transform: translateX(5px); }
+        }
+    `;
+    document.head.appendChild(styleSheet);
+});
+
 // Particles.js Konfigürasyonu
 particlesJS('particles-js', {
     particles: {
